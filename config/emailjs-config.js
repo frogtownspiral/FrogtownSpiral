@@ -1,6 +1,6 @@
 window.EMAILJS_CONFIG = {
-  publicKey: 'YOUR_PUBLIC_KEY',
-  serviceId: 'YOUR_SERVICE_ID',
+  publicKey: 'xWkQZck2SG6kjqK6G',
+  serviceId: 'Frogtown_Contact_83828',
   templateId: 'template_hf79hke',
   options: {
     blockHeadless: true,
