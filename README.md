@@ -28,13 +28,37 @@ To deploy updates:
 1. Push changes to the main branch
 2. GitHub Pages will automatically rebuild and publish the site
 
+## EmailJS Configuration
+
+All EmailJS browser-side settings are stored in `config/emailjs-config.js`.
+
+Update these values before deploying:
+
+```js
+window.EMAILJS_CONFIG = {
+  publicKey: 'YOUR_PUBLIC_KEY',
+  serviceId: 'YOUR_SERVICE_ID',
+  templateId: 'YOUR_TEMPLATE_ID',
+};
+```
+
+The contact form fields currently map to the following EmailJS template variables:
+
+- `name`
+- `email`
+- `phone`
+- `message`
+
+Important: only use the **public key** in this file. Do not place your EmailJS private key in frontend code.
+
 ## Project Structure
 
 ```
-index.html
+/assets/images/
+/config/emailjs_config.js
 /css/styles.css
 /js/main.js
-/assets/images/
+index.html
 ```
 
 ## Future Improvements
