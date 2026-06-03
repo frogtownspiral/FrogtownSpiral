@@ -1,38 +1,103 @@
 # Frogtown Spiral & Sheet Metal Website
 
-Official website for Frogtown Spiral & Sheet Metal, based in Toledo, Ohio.
+Official website for Frogtown Spiral & Sheet Metal, a pending-launch spiral ductwork and custom sheet metal business serving Toledo, Ohio and surrounding areas.
+
+This project was built as a lightweight public-facing business website to establish an online presence, present planned services, and provide general contact information while the business prepares for launch.
+
+## Current Status
+
+The website is currently deployed in a **pending business launch** state.
+
+The live production page does **not** accept new orders or quote requests at this time. The previous active-business version, including the original quote/contact form workflow, is preserved in the `active-business` branch.
+
+## Live Site
+
+This site is hosted using GitHub Pages.
+
+Deployment branch:
+
+```text
+prod
+```
 
 ## Overview
 
-This is a lightweight, responsive landing page built to establish an online presence and provide a simple way for customers to request quotes.
+This is a lightweight, responsive single-page website built with plain HTML, CSS, and JavaScript. The project was designed to give the business a professional web presence with minimal hosting cost and a simple deployment workflow.
+
+The site originally included an EmailJS-powered contact form for quote requests. After the business moved back into a pending-launch state, the production page was updated to remove active quote intake and instead display general inquiry contact information.
 
 ## Features
 
-* Responsive single-page design
-* Contact form powered by EmailJS
-* Fast, static hosting via GitHub Pages
+Current production version:
+
+* Responsive single-page layout
+* Pending-launch business status messaging
+* General inquiry contact section
+* Click-to-call phone link
+* Mailto email link
+* GitHub Pages deployment from the `prod` branch
+* Preserved branch history for active and pending business states
+
+Original active-business version:
+
+* Quote/contact form
+* EmailJS browser-side contact form integration
+* Active quote request messaging
+* Original business launch content
 
 ## Tech Stack
 
 * HTML
 * CSS
 * JavaScript
-* EmailJS
+* GitHub Pages
+* EmailJS, preserved in the active-business version
+
+## Branch Structure
+
+| Branch                    | Purpose                                                                      |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| `main`                    | Current production-equivalent code                                           |
+| `prod`                    | GitHub Pages deployment branch                                               |
+| `pending-business-launch` | Current pending-launch website version                                       |
+| `active-business`         | Previous active-business website with original form and business information |
 
 ## Deployment
 
-This site is hosted using GitHub Pages.
+GitHub Pages is configured to deploy from:
+
+```text
+Branch: prod
+Folder: /root
+```
 
 To deploy updates:
 
-1. Push changes to the main branch
-2. GitHub Pages will automatically rebuild and publish the site
+1. Make and test changes locally.
+2. Commit changes on the appropriate working branch.
+3. Merge or fast-forward the approved version into `prod`.
+4. Push `prod` to GitHub.
+5. GitHub Pages automatically rebuilds and publishes the site.
+
+Example:
+
+```bash
+git switch prod
+git merge --ff-only pending-business-launch
+git push origin prod
+```
 
 ## EmailJS Configuration
 
-All EmailJS browser-side settings are stored in `config/emailjs-config.js`.
+The original active-business version used EmailJS for browser-side contact form submissions.
 
-Update these values before deploying:
+EmailJS browser-side settings are stored in:
+
+```text
+config/emailjs-config.js
+```
+
+Example configuration:
 
 ```js
 window.EMAILJS_CONFIG = {
@@ -42,32 +107,53 @@ window.EMAILJS_CONFIG = {
 };
 ```
 
-The contact form fields currently map to the following EmailJS template variables:
+The original contact form fields mapped to the following EmailJS template variables:
 
-- `name`
-- `email`
-- `phone`
-- `message`
+* `name`
+* `email`
+* `phone`
+* `message`
 
-Important: only use the **public key** in this file. Do not place your EmailJS private key in frontend code.
+Important: only use the EmailJS public key in frontend code. Do not place private keys, passwords, or sensitive credentials in this repository.
 
 ## Project Structure
 
-```
+```text
 /assets/images/
-/config/emailjs_config.js
-/css/styles.css
-/js/main.js
+  logo.png
+
+/config/
+  emailjs-config.js
+
+/css/
+  styles.css
+
+/js/
+  main.js
+
 index.html
+README.md
 ```
 
 ## Future Improvements
 
-* Project gallery / portfolio
-* Google Maps integration
-* SEO enhancements
-* Performance optimization
+Potential future improvements include:
 
-## License
+* Re-enable quote request workflow when the business is operational
+* Add project gallery or fabrication examples
+* Add custom domain configuration
+* Add local SEO improvements
+* Add Google Business Profile integration
+* Add Google Maps or service-area section
+* Improve performance and image optimization
+* Add structured data for local business search visibility
 
-This project is proprietary and not licensed for reuse or distribution.
+## License and Use
+
+This project is proprietary and is not licensed for reuse, redistribution, or derivative works.
+
+This repository is public for business visibility, portfolio demonstration, and project transparency. Viewing the source code does not grant permission to copy, reuse, redistribute, or commercially deploy this work without written permission from the repository owner.
+
+## Project Credit
+
+Website design, implementation, repository setup, branch/deployment workflow, GitHub Pages deployment, and EmailJS contact form integration were completed by [Alex Schlotterer](https://github.com/aschlot2).
